@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <h1>Coding Platform</h1>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LOGIN PAGE -->
+<div id="loginPage" class="center">
+    <h2>Login to Coding Platform</h2>
+    <input type="text" id="usernameInput" placeholder="Enter your name">
+    <button onclick="login()">Login</button>
+</div>
+
+<!-- MAIN APP -->
+<div id="mainApp" style="display:none;">
+
+<header>
+    <h1>Coding Platform</h1>
+    <div>
+        <span>👤 <span id="currentUser"></span></span>
+        <button onclick="logout()">Logout</button>
+        <button onclick="toggleDarkMode()">Dark Mode</button>
+        <span>⏱ <span id="timer">60</span>min</span>
+        <span>🏆 <span id="score">0</span></span>
+    </div>
+</header>
+
+<div class="container">
+
+    <div class="sidebar">
+        <h3>Problems</h3>
+        <select id="difficultyFilter" onchange="filterProblems()">
+            <option value="All">All</option>
+            <option value="Easy">Easy</option>
+            <option value="Medium">Medium</option>
+            <option value="Hard">Hard</option>
+        </select>
+        <ul id="problemList"></ul>
+    </div>
+
+    <div class="editor">
+        <h2 id="problemTitle">Select a Problem</h2>
+        <p id="problemDesc"></p>
+
+        <select id="languageSelect">
+            <option value="javascript">JavaScript</option>
+            <option value="python">Python</option>
+            <option value="java">Java</option>
+            <option value="c">C</option>
+            <option value="cpp">C++</option>
+            <option value="kotlin">Kotlin</option>
+        </select>
+
+        <textarea id="codeArea"></textarea>
+
+        <div>
+            <button onclick="runCode()">Run</button>
+            <button onclick="submitCode()">Submit</button>
+        </div>
+
+        <pre id="output"></pre>
+    </div>
+
+    <div class="leaderboard">
+        <h3>Leaderboard</h3>
+        <ul id="leaderboardList"></ul>
+    </div>
+
+</div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
